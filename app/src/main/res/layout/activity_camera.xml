@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1"
+    android:background="#ffffff">
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/imgPrev"
+                    android:layout_weight="0.5"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="30 fps @ 320 x 240"
+                    android:id="@+id/fpsFrame"
+                    android:textColor="@color/MockupRedText"
+                    android:textStyle="italic"
+                    android:layout_margin="10dp" />
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <org.opencv.android.JavaCameraView
+                    android:id="@+id/JavaCameraView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/filterProgress"
+                android:layout_gravity="center_horizontal"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:id="@+id/imgOriginal"
+                    android:layout_weight="0.5"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:id="@+id/imgTraitementImg"
+                    android:layout_weight="0.5"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Image originale"
+                    android:id="@+id/tv1"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/MockupRedText" />
+
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Traitement de l&apos;image"
+                    android:id="@+id/tv2"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/MockupRedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgExtract"
+                    android:layout_weight="0.5"
+                    android:scaleType="centerInside"
+                    android:layout_margin="5dp" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgFinal"
+                    android:layout_weight="0.5"
+                    android:layout_margin="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Carte extraite"
+                    android:id="@+id/tv3"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/MockupRedText" />
+
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Image matching"
+                    android:id="@+id/tv4"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/MockupRedText" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvClasseCarte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/MockupRedText" />
+
+            <TextView
+                android:id="@+id/tvNumeroCarte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/MockupRedText" />
+
+            <TextView
+                android:id="@+id/tvCouleurCarte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/MockupRedText" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/MockupRedText" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

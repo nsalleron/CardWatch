@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="CardWatch"
+            android:id="@+id/textView5"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reconnaissance via Galerie"
+            android:id="@+id/btnGalerie"
+            android:layout_gravity="center"
+            android:layout_margin="15dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reconnaissance via Camera"
+            android:id="@+id/btnCamera"
+            android:layout_gravity="center"
+            android:layout_margin="15dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Base d&apos;images de l&apos;application"
+            android:id="@+id/btnBase"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

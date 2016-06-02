@@ -1,0 +1,55 @@
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:showDividers="beginning|middle|end">
+
+            <ProgressBar
+                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/pb"
+                android:layout_gravity="center_horizontal" />
+
+            <GridView
+                    android:id="@+id/gridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:columnWidth="100dp"
+                    android:drawSelectorOnTop="true"
+                    android:gravity="center"
+                    android:numColumns="auto_fit"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="5dp"
+                    android:focusable="true"
+                    android:clickable="true"
+                android:layout_weight="0.9" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Reconnaissance avec cette base"
+                android:id="@+id/btnR1"
+                android:layout_weight="0.1"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+
+

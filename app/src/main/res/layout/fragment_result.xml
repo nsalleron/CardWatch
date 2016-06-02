@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@+id/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="1dip"
+        android:layout_centerVertical ="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/MockupRedText"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Formule du Rappel"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/imageView"
+                        android:scaleType="center"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/r" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/tvRappel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rappel"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_rappel"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".5">
+
+                        <com.liulishuo.magicprogresswidget.MagicProgressCircle
+                            android:id="@+id/rmpc"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:mpc_default_color="@color/mpc_default_color"
+                            app:mpc_end_color="@color/mpc_end_color"
+                            app:mpc_percent="0.0"
+                            app:mpc_start_color="@color/mpc_start_color"
+                            app:mpc_stroke_width="15dp" />
+
+                        <com.cardwatch.g1.CardWatch.utils.AnimTextView
+                            android:id="@+id/ratv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="36sp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Formule de la Précision"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/imageView2"
+                        android:scaleType="center"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/p" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/tvPrecision"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Précision"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_precision"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.liulishuo.magicprogresswidget.MagicProgressCircle
+                            android:id="@+id/pmpc"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:mpc_default_color="@color/mpc_default_color"
+                            app:mpc_end_color="@color/mpc_end_color"
+                            app:mpc_percent="0.0"
+                            app:mpc_start_color="@color/mpc_start_color"
+                            app:mpc_stroke_width="15dp" />
+
+                        <com.cardwatch.g1.CardWatch.utils.AnimTextView
+                            android:id="@+id/patv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="36sp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Formule de l&apos;Exactitude"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/imageView3"
+                        android:scaleType="center"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/e" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/tvExactitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exactitude"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_exactitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.liulishuo.magicprogresswidget.MagicProgressCircle
+                            android:id="@+id/empc"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:mpc_default_color="@color/mpc_default_color"
+                            app:mpc_end_color="@color/mpc_end_color"
+                            app:mpc_percent="0.0"
+                            app:mpc_start_color="@color/mpc_start_color"
+                            app:mpc_stroke_width="15dp" />
+
+                        <com.cardwatch.g1.CardWatch.utils.AnimTextView
+                            android:id="@+id/eatv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="36sp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Formule de l&apos;Moyenne Harmonique"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/imageView4"
+                        android:scaleType="center"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/mh" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/tvMoyenneHarmonique"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Moyenne Harmonique"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_mh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.liulishuo.magicprogresswidget.MagicProgressCircle
+                            android:id="@+id/hmpc"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:mpc_default_color="@color/mpc_default_color"
+                            app:mpc_end_color="@color/mpc_end_color"
+                            app:mpc_percent="0.0"
+                            app:mpc_start_color="@color/mpc_start_color"
+                            app:mpc_stroke_width="15dp" />
+
+                        <com.cardwatch.g1.CardWatch.utils.AnimTextView
+                            android:id="@+id/hatv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="36sp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/tvReconnaissanceClasse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taux de reconnaissance des classes"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_classe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.liulishuo.magicprogresswidget.MagicProgressCircle
+                            android:id="@+id/cmpc"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:mpc_default_color="@color/mpc_default_color"
+                            app:mpc_end_color="@color/mpc_end_color"
+                            app:mpc_percent="0.0"
+                            app:mpc_start_color="@color/mpc_start_color"
+                            app:mpc_stroke_width="15dp" />
+
+                        <com.cardwatch.g1.CardWatch.utils.AnimTextView
+                            android:id="@+id/catv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="36sp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/tvChiffre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taux de reconnaissance des nombres"
+                        android:textColor="@color/MockupRedText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_chiffre"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.liulishuo.magicprogresswidget.MagicProgressCircle
+                            android:id="@+id/nmpc"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:mpc_default_color="@color/mpc_default_color"
+                            app:mpc_end_color="@color/mpc_end_color"
+                            app:mpc_percent="0.0"
+                            app:mpc_start_color="@color/mpc_start_color"
+                            app:mpc_stroke_width="15dp" />
+
+                        <com.cardwatch.g1.CardWatch.utils.AnimTextView
+                            android:id="@+id/natv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="36sp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

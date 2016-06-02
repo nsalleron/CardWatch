@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff">
+    <View android:id="@+id/separator"
+        android:layout_width = "fill_parent"
+        android:layout_height="1dip"
+        android:layout_centerVertical ="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/MockupRedText"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ScrollviewCarte" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tutoLinearLayout" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Reconnaissance groupe d&apos;image"
+                    android:id="@+id/textView14"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="On sélectionne l&apos;option &quot;Reconnaissance groupe image&quot; dans le menu"
+                        android:id="@+id/textView15"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/MockupRedText"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageView9"
+                        android:layout_margin="10dp"
+                        android:layout_weight="0.5"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/tuto1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="On choisit ensuite l&apos;option &quot;Select File&quot;. Il est obligatoire d&apos;avoir installé un gestionnaire de fichier préalablement (X-plore ou un autre par exemple)."
+                    android:id="@+id/textView16"
+                    android:layout_weight="0.5"
+                    android:textAlignment="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText"
+                    android:textStyle="italic" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageView10"
+                        android:layout_margin="10dp"
+                        android:layout_weight="0.5"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/tuto2" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Cette option, n&apos;est accessible que si l&apos;on possède un gestionnaire de fichier."
+                        android:id="@+id/textView17"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/MockupRedText"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="On termine par la selection du fichier contenant notre correction."
+                        android:id="@+id/textView18"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/MockupRedText"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageView11"
+                        android:layout_margin="10dp"
+                        android:layout_weight="0.5"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/tuto3" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Note : Le fichier contenant la correction doit être dans le répertoire contenant les images. "
+                    android:id="@+id/textView19"
+                    android:layout_weight="0.5"
+                    android:textAlignment="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Les images doivent être rangées dans l&apos;ordre de la correction."
+                    android:id="@+id/textView20"
+                    android:layout_weight="0.5"
+                    android:textAlignment="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText"
+                    android:textStyle="italic" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Exemple de fichier de correction : "
+                        android:id="@+id/textView21"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/MockupRedText"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageView12"
+                        android:layout_margin="10dp"
+                        android:layout_weight="0.5"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/tuto4" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="La ligne &quot;false&quot; indique l&apos;absence de carte dans l&apos;image"
+                    android:id="@+id/textView6"
+                    android:layout_weight="0.5"
+                    android:textAlignment="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageLinearLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:id="@+id/imgOriginal"
+                        android:layout_weight="0.5"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:id="@+id/imgTraitementImg"
+                        android:layout_weight="0.5"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Image originale"
+                        android:id="@+id/tv1"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:textColor="@color/MockupRedText" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Traitement de l&apos;image"
+                        android:id="@+id/tv2"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:textColor="@color/MockupRedText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imgExtract"
+                        android:layout_weight="0.5"
+                        android:scaleType="centerInside"
+                        android:layout_margin="5dp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imgFinal"
+                        android:layout_weight="0.5"
+                        android:layout_margin="5dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Carte extraite"
+                        android:id="@+id/tv3"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:textColor="@color/MockupRedText" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Image matching"
+                        android:id="@+id/tv4"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:textColor="@color/MockupRedText" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvClasseCarte"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText" />
+
+                <TextView
+                    android:id="@+id/tvNumeroCarte"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText" />
+
+                <TextView
+                    android:id="@+id/tvCouleurCarte"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/MockupRedText" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
