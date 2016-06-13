@@ -175,6 +175,10 @@ public class Camera_Activity extends FragmentActivity implements CameraBridgeVie
                 public void run() {
                     Utils.matToBitmap(rgba,selectedImage);
                     imgReconnaissance img = new imgReconnaissance(rotateBitmap(selectedImage,90),pb,getApplicationContext(), ressourceMat, initThread, Camera_Activity.this);
+                    if(img.findCard()){
+                        img.warpCardInImage();
+                        img.DetermineCard();
+                    }
                     resultatsGlobaux.add(img.getResult());
                     premiereFois = true;
                 }

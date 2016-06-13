@@ -41,17 +41,23 @@ public class imgReconnaissance {
     private final Context context;
     private final Mat[] ressourceMat;
     private final Activity activity;
+    private final Thread initThread;
+    private List<MatOfPoint> contours;
+    private final Bitmap selectedImage;
+    private double[] temp_double;
+    private int index;
+    private MatOfPoint2f approxCurve;
     private long startTime;
-    private final Mat srcOrig;
-    private final int scaleFactor;
-    private final Mat src;
+    private Mat srcOrig;
+    private int scaleFactor;
+    private Mat src;
     private final Handler handler;
     private Mat img1 = null;
     private Mat img2 = null;
     private double[][] resultats = new double[Ressources.ressourceString.length][2];   //L'ensemble des images avec 2 rotation
     private String couleur;
     private int finalIndex;
-    private boolean ImageAbs;
+    private boolean imageAbs;
 
     public imgReconnaissance(Bitmap selectedImage, final ProgressBar progressBar, final Context context, Mat[] ressourcesMat , Thread initThread, FragmentActivity activity) {
 
@@ -59,19 +65,23 @@ public class imgReconnaissance {
         this.progressBar = progressBar;
         this.context = context;
         this.ressourceMat = ressourcesMat;
-
+        this.initThread = initThread;
+        this.selectedImage = selectedImage;
         handler = new Handler(context.getMainLooper());
-        startTime = System.currentTimeMillis();
 
+    }
+
+    public boolean findCard(){
+
+
+        startTime = System.currentTimeMillis();
         //Récupération de l'image
         srcOrig = new Mat(selectedImage.
                 getHeight(), selectedImage.
                 getWidth(), CvType.CV_8UC4);
 
-
         Imgproc.cvtColor(srcOrig, srcOrig,
                 Imgproc.COLOR_BGR2RGB);
-
 
         Utils.bitmapToMat(selectedImage, srcOrig);
         scaleFactor = calcFacteurEchelle(
@@ -176,12 +186,12 @@ public class imgReconnaissance {
 
 
         //Reconnaissances des contours
-        List<MatOfPoint> contours = new ArrayList<>();
+        contours = new ArrayList<>();
         Imgproc.findContours(srcGray, contours, new Mat(),  Imgproc.RETR_LIST,Imgproc.CHAIN_APPROX_SIMPLE);
-        MatOfPoint2f approxCurve = new MatOfPoint2f();
+        approxCurve = new MatOfPoint2f();
 
         double maxArea = -1;
-        int index = 0;
+        index = 0;
         //Pour charque contour
         for (int i=0; i<contours.size(); i++)
         {
@@ -206,83 +216,80 @@ public class imgReconnaissance {
         if(activity instanceof Galerie_Activity)
             affichageMatrice(R.id.imgTraitementImg,srcGray,srcGray.width(),srcGray.height());
 
-        double[] temp_double;
         temp_double = approxCurve.get(0, 0);
         if(temp_double != null) {    //Rognage de l'image, mise en place des points de coupe.
-            Point p1 = new Point(temp_double[0], temp_double[1]);
-
-            temp_double = approxCurve.get(1, 0);
-            Point p2 = new Point(temp_double[0], temp_double[1]);
-
-            temp_double = approxCurve.get(2, 0);
-            Point p3 = new Point(temp_double[0], temp_double[1]);
-
-            temp_double = approxCurve.get(3, 0);
-            Point p4 = new Point(temp_double[0], temp_double[1]);
-
-            List<Point> source = new ArrayList<Point>();
-
-            source.add(p4);
-            source.add(p1);
-            source.add(p2);
-            source.add(p3);
-
-            //Affichage du contour
-            MatOfPoint mat = contours.get(index);
-            Rect rect = Imgproc.boundingRect(mat);
-            Mat matAffichage = src.clone();
-            Core.rectangle(matAffichage, new Point(rect.x,rect.y), new Point(rect.x+rect.width,rect.y+rect.height), new Scalar(255, 0, 0, 255), 3);
-            affichageMatrice(R.id.imgOriginal,matAffichage,matAffichage.width(),matAffichage.height());
-
-
-            Mat startM = Converters.vector_Point2f_to_Mat(source);
-
-            //Copie des images
-            img1 = src.clone();
-            img2 = src.clone();
-
-            //Rogagne
-            Mat resultImage1 = rognageImg(img1, startM);
-            Mat imgColor1 = resultImage1.clone();
-            Imgproc.cvtColor(resultImage1,img1,Imgproc.COLOR_RGB2GRAY);
-            Imgproc.threshold(img1, img1, 0, 255, Imgproc.THRESH_BINARY_INV + Imgproc.THRESH_OTSU);
-
-            //Vérification si l'ensemble des matrices sont prêtent
-            if(initThread.isAlive()){
-                try {
-                    initThread.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-
-            source.clear();
-            source.add(p1);
-            source.add(p2);
-            source.add(p3);
-            source.add(p4);
-
-            startM = Converters.vector_Point2f_to_Mat(source);
-
-            //Rogagne
-            Mat resultImage2 = rognageImg(img2, startM);
-            Imgproc.cvtColor(resultImage2,img2,Imgproc.COLOR_RGB2GRAY);
-            Imgproc.threshold(img2, img2, 0, 255, Imgproc.THRESH_BINARY_INV + Imgproc.THRESH_OTSU);
-
-            reconnaissanceImage();
+            imageAbs = false;
 
         }else{
-            ImageAbs = true;
+            imageAbs = true;
         }
 
-
-
-
+        return !imageAbs;
 
     }
 
+    public void warpCardInImage() {
+        Point p1 = new Point(temp_double[0], temp_double[1]);
 
+        temp_double = approxCurve.get(1, 0);
+        Point p2 = new Point(temp_double[0], temp_double[1]);
+
+        temp_double = approxCurve.get(2, 0);
+        Point p3 = new Point(temp_double[0], temp_double[1]);
+
+        temp_double = approxCurve.get(3, 0);
+        Point p4 = new Point(temp_double[0], temp_double[1]);
+
+        List<Point> source = new ArrayList<Point>();
+
+        source.add(p4);
+        source.add(p1);
+        source.add(p2);
+        source.add(p3);
+
+        //Affichage du contour
+        MatOfPoint mat = contours.get(index);
+        Rect rect = Imgproc.boundingRect(mat);
+        Mat matAffichage = src.clone();
+        Core.rectangle(matAffichage, new Point(rect.x,rect.y), new Point(rect.x+rect.width,rect.y+rect.height), new Scalar(255, 0, 0, 255), 3);
+        affichageMatrice(R.id.imgOriginal,matAffichage,matAffichage.width(),matAffichage.height());
+
+
+        Mat startM = Converters.vector_Point2f_to_Mat(source);
+
+        //Copie des images
+        img1 = src.clone();
+        img2 = src.clone();
+
+        //Rogagne
+        Mat resultImage1 = warpCard(img1, startM);
+        Mat imgColor1 = resultImage1.clone();
+        Imgproc.cvtColor(resultImage1,img1,Imgproc.COLOR_RGB2GRAY);
+        Imgproc.threshold(img1, img1, 0, 255, Imgproc.THRESH_BINARY_INV + Imgproc.THRESH_OTSU);
+
+        //Vérification si l'ensemble des matrices sont prêtent
+        if(initThread.isAlive()){
+            try {
+                initThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        source.clear();
+        source.add(p1);
+        source.add(p2);
+        source.add(p3);
+        source.add(p4);
+
+        startM = Converters.vector_Point2f_to_Mat(source);
+
+        //Rogagne
+        Mat resultImage2 = warpCard(img2, startM);
+        Imgproc.cvtColor(resultImage2,img2,Imgproc.COLOR_RGB2GRAY);
+        Imgproc.threshold(img2, img2, 0, 255, Imgproc.THRESH_BINARY_INV + Imgproc.THRESH_OTSU);
+    }
 
 
     private static int calcFacteurEchelle(int rows, int cols){
@@ -307,7 +314,7 @@ public class imgReconnaissance {
     }
 
 
-    public Mat rognageImg(Mat inputMat, Mat startM)
+    public Mat warpCard(Mat inputMat, Mat startM)
     {
 
         int resultWidth = 764;
@@ -349,7 +356,7 @@ public class imgReconnaissance {
         return outputMat;
     }
 
-    private void reconnaissanceImage() {
+    public void DetermineCard() {
 
         startTime = System.currentTimeMillis();
 
@@ -477,7 +484,7 @@ public class imgReconnaissance {
                     ((ImageView)  activity.findViewById(R.id.imgFinal)).setImageBitmap(imgBitmapResult);
                 }
 
-                if(!ImageAbs){
+                if(!imageAbs){
                     activity.findViewById(R.id.tvClasseCarte).setVisibility(View.VISIBLE);
                     activity.findViewById(R.id.tvNumeroCarte).setVisibility(View.VISIBLE);
                     activity.findViewById(R.id.tvCouleurCarte).setVisibility(View.VISIBLE);
@@ -499,7 +506,7 @@ public class imgReconnaissance {
 
     public String getResult() {
         String result;
-        if(ImageAbs)
+        if(imageAbs)
             result = "false;";
         else
             result = Ressources.ressourceString[finalIndex].split(";")[0] + ";" + Ressources.ressourceString[finalIndex].split(";")[1];// + ";" + couleur;

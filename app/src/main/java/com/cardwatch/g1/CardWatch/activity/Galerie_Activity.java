@@ -74,6 +74,10 @@ public class Galerie_Activity extends FragmentActivity {
                                         selectedImage = BitmapFactory.decodeResource(getResources(), images[i]);
                                         initInterface();
                                         imgReconnaissance img = new imgReconnaissance(selectedImage, progressBar, getApplicationContext(), ressourceMat, initThread, Galerie_Activity.this);
+                                        if(img.findCard()){
+                                            img.warpCardInImage();
+                                            img.DetermineCard();
+                                        }
                                         Log.e("Result image : ", img.getResult());
                                         resultatsGlobaux.add(img.getResult());
                                         statistique();
