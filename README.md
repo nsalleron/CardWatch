@@ -7,6 +7,13 @@
  *  Via Galerie
  *  Via Groupe d’image
  *  Via Camera du smartphone
+ 
+ 
+#Exemples d'utilisation
+ [![CardWatch Galerie Image](https://img.youtube.com/vi/bfVpBnFPXK8/0.jpg)](https://www.youtube.com/embed/bfVpBnFPXK8 )
+
+
+
 
 # Algorithme de reconnaissance
 
