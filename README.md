@@ -1,12 +1,12 @@
 #Projet imagerie de L3
 
-Application mobile sous Android
-	1°) Compatible Android 4.0+
-	2°) OpenCV 2.4.10
-3 modes d’utilisation:
-	1°) Via Galerie
-	2°) Via Groupe d’image
-	3°) Via Camera du smartphone
+Markup : * Application mobile sous Android
+           * Compatible Android 4.0+
+            * OpenCV 2.4.10
+          * 3 modes d’utilisation
+	   *  Via Galerie
+	    *  Via Groupe d’image
+	     *  Via Camera du smartphone
 
 # Algorithme de reconnaissance
 
