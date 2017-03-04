@@ -10,10 +10,10 @@
  
  
 #Exemples d'utilisations
- [![CardWatch Galerie Image](https://img.youtube.com/vi/bfVpBnFPXK8/0.jpg)](https://www.youtube.com/embed/bfVpBnFPXK8 )
-
-->Incoming
-
+ [![CardWatch Galerie Image](https://img.youtube.com/vi/bfVpBnFPXK8/0.jpg)](https://www.youtube.com/watch?v=bfVpBnFPXK8 )
+ [![CardWatch Galerie Groupe](https://img.youtube.com/vi/MpsfJNBn2nc/0.jpg)](https://www.youtube.com/watch?v=MpsfJNBn2nc )
+ [![CardWatch Groupe image](https://img.youtube.com/vi/0-8ttAg8r-0/0.jpg)](https://www.youtube.com/watch?v=0-8ttAg8r-0 )
+ [![CardWatch Mode caméra](https://img.youtube.com/vi/UIfwgld7HTE/0.jpg)](https://www.youtube.com/watch?v=UIfwgld7HTE )
 
 # Algorithme de reconnaissance
 
