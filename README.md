@@ -9,13 +9,15 @@
  *  Via Camera du smartphone
  
  
-#Exemples d'utilisations
+## Exemples d'utilisations
+
+
  [![CardWatch Galerie Image](https://img.youtube.com/vi/bfVpBnFPXK8/0.jpg)](https://www.youtube.com/watch?v=bfVpBnFPXK8 )
  [![CardWatch Galerie Groupe](https://img.youtube.com/vi/MpsfJNBn2nc/0.jpg)](https://www.youtube.com/watch?v=MpsfJNBn2nc )
  [![CardWatch Groupe image](https://img.youtube.com/vi/0-8ttAg8r-0/0.jpg)](https://www.youtube.com/watch?v=0-8ttAg8r-0 )
  [![CardWatch Mode caméra](https://img.youtube.com/vi/UIfwgld7HTE/0.jpg)](https://www.youtube.com/watch?v=UIfwgld7HTE )
 
-# Algorithme de reconnaissance
+## Algorithme de reconnaissance
 
 	1°) Redimenssionnement de l'image
 	2°) Lissage de l'image
@@ -33,13 +35,13 @@
 	14°) Le score le plus faible représente le peu de différence entre les deux images.
 	15°) Reconnaissance de la classe, du nombre et de la couleur.
 
-# Modes de reconnaissance
+## Modes de reconnaissance
 
 	Reconnaissance d'une image.
 	Reconnaissance de groupe d'image avec taux de reconnaissance.
 	Reconnaissance via Camera.
 
-# Sources
+## Sources
 
 	• Mastering OpenCV Android Application Programming
 	• Android Application Programming with OpenCV
