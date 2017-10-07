@@ -1,4 +1,4 @@
-#Projet imagerie de L3
+## Projet imagerie de L3
 
 * Application mobile sous Android
  * Compatible Android 4.0+
